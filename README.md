@@ -1,4 +1,4 @@
-# SIT Timetable Telegram Bot
+# SIT Timetable to Telegram
 
 This Python script retrieves your weekly timetable from the Singapore Institute of Technology (SIT) student portal and sends it to a designated Telegram chat. It also provides a CSV file of the weekly schedule for your convenience.
 
@@ -19,8 +19,8 @@ This Python script retrieves your weekly timetable from the Singapore Institute 
 ### Setup and Configuration
 1.  **Clone the repository:**
     ```bash
-    git clone [your-repo-link]
-    cd [your-repo-name]
+    git clone https://github.com/bogevow191/Timetable-Getter.git
+    cd Timetable-Getter
     ```
 
 2.  **Install the required Python libraries:**
@@ -31,10 +31,10 @@ This Python script retrieves your weekly timetable from the Singapore Institute 
 
 3.  **Configure environment variables or a configuration file:**
     You will need to set up the following credentials and details. It's recommended to use a `.env` file to manage these securely.
-    * `SIT_USERNAME`: Your SIT student email address.
-    * `SIT_PASSWORD`: Your SIT student portal password.
+    * `USERNAME`: Your SIT student email address.
+    * `PASSWORD`: Your SIT student portal password.
     * `TELEGRAM_BOT_TOKEN`: The API token from your Telegram bot.
-    * `TELEGRAM_CHAT_ID`: The ID of the Telegram channel or group.
+    * `TELEGRAM_CHANNEL_ID`: The ID of the Telegram channel or group.
 
 ---
 
