@@ -27,6 +27,9 @@ This Python script retrieves your weekly timetable from the Singapore Institute 
     ```bash
     pip install -r requirements.txt
     ```
+    ```
+    playwright install
+    ```
     *(Note: The script uses `Playwright`)
 
 3.  **Configure environment variables or a configuration file:**
