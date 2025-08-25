@@ -4,7 +4,7 @@ This Python script retrieves your weekly timetable from the (SIT) student portal
 
 ### Features
 * **Daily Timetable Update:** Fetches and sends the next working day's timetable to a Telegram chat.
-* **Weekly CSV Export:** Generates a CSV file (`timetable.csv`) containing the full weekly schedule.
+* **Weekly CSV Export:** Generates a CSV file (`weekly_schedule_timetable.csv`) containing the full weekly schedule.
 
 ---
 
