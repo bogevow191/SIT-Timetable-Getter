@@ -298,8 +298,7 @@ def get_timetable(username=None, password=None, headless=False, output_filename=
                 
                 # start_date = datetime.date(2025, 8, 29)
                 start_date = datetime.datetime.now()
-                format_str = "%#d %b" if platform.system() == "Windows" else "%-d %b"
-                next_working_day_str = (start_date + datetime.timedelta(days=3 if start_date.weekday() == 4 else (2 if start_date.weekday() == 5 else (1 if start_date.weekday() == 6 else 1)))).strftime(format_str)
+                next_working_day_str = (start_date + datetime.timedelta(days=3 if start_date.weekday() == 4 else (2 if start_date.weekday() == 5 else (1 if start_date.weekday() == 6 else 1)))).strftime("%d/%m/%Y")
                 
                 try:
                     print("Clicking element with ID DERIVED_CLASS_S_START_DT...")

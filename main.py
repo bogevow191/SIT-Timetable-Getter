@@ -3,6 +3,7 @@ import datetime
 import pandas as pd
 import os
 from telegram import send_telegram_csv, send_telegram_message
+import platform
 
 # Get the directory where this script is located
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,7 +32,7 @@ df = get_timetable(
 
 lessons = []
 for col in df.columns:
-    if todaydate in col:
+    if next_working_day_str in col:
         for row in df[col].dropna():
             # Check if row is not empty and contains the expected format
             if row and isinstance(row, str) and '|' in row:
