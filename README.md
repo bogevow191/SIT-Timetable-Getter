@@ -1,6 +1,6 @@
 # SIT Timetable to Telegram
 
-This Python script retrieves your weekly timetable from the Singapore Institute of Technology (SIT) student portal and sends it to a designated Telegram chat. It also provides a CSV file of the weekly schedule for your convenience.
+This Python script retrieves your weekly timetable from the (SIT) student portal and sends it to a designated Telegram chat. It also provides a CSV file of the weekly schedule for your convenience.
 
 ### Features
 * **Daily Timetable Update:** Fetches and sends the next working day's timetable to a Telegram chat.
