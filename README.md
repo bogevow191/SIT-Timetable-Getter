@@ -33,7 +33,7 @@ This Python script retrieves your weekly timetable from the (SIT) student portal
     *(Note: The script uses `Playwright`)
 
 3.  **Configure environment variables or a configuration file:**
-    You will need to set up the following credentials and details. It's recommended to use a `.env` file to manage these securely.
+    You will need to set up the following credentials and details in `main.py`. It's recommended to use a `.env` file to manage these securely.
     * `USERNAME`: Your SIT student email address.
     * `PASSWORD`: Your SIT student portal password.
     * `TELEGRAM_BOT_TOKEN`: The API token from your Telegram bot.
