@@ -219,4 +219,4 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Additional
-run_script.sh
+run.sh
