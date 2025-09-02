@@ -46,7 +46,7 @@ This Python script retrieves your weekly timetable from the (SIT) student portal
     * `TELEGRAM_BOT_TOKEN`: The API token from your Telegram bot.
     * `TELEGRAM_CHANNEL_ID`: The ID of the Telegram channel or group.
 
-5 **(Optional) Configure cron job:**
+5.   **(Optional) Configure cron job:**
     * Set up a cron job to run the script daily at a specific time.
     * Edit your crontab file using `crontab -e` and add a line like:
       ```
