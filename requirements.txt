@@ -4,6 +4,7 @@ Babel==2.10.3
 bcc==0.1.10
 bcrypt==3.2.2
 blinker==1.7.0
+beautifulsoup4==4.12.2
 certifi==2023.11.17
 chardet==5.2.0
 click==8.1.6
@@ -31,7 +32,9 @@ mdurl==0.1.2
 netaddr==0.8.0
 netifaces==0.11.0
 oauthlib==3.2.2
+pandas==2.1.4
 pexpect==4.9.0
+playwright==1.40.0
 ptyprocess==0.7.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
