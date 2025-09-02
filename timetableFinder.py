@@ -48,7 +48,7 @@ def setup_stealth_page(page):
         );
     """)
 
-def get_timetable(username=None, password=None, headless=False, output_filename="weekly_schedule_timetable"):
+def get_timetable(username=None, password=None, headless=False, output_filename="weekly_schedule_timetable", start_date=None):
     """
     Get timetable data from the SIT portal.
     
@@ -215,18 +215,18 @@ def get_timetable(username=None, password=None, headless=False, output_filename=
                 # page.screenshot(path=os.path.join(SCRIPT_DIR, "step1_error.png"))
             
             # STEP 2: Click the second div element
-            print("STEP 2: Looking for second div element (win1div$ICField$11$$1)...")
+            print("STEP 2: Looking for second div element (win2div$ICField$11$$1)...")
             
             try:
                 page.wait_for_load_state('networkidle', timeout=10000)
                 time.sleep(2)
                 
-                second_div_selector = '#win1div\\$ICField\\$11\\$\\$1'
+                second_div_selector = '#win2div\\$ICField\\$11\\$\\$1'
                 page.wait_for_selector(second_div_selector, timeout=15000)
                 
                 second_div = page.locator(second_div_selector)
                 if second_div.is_visible():
-                    print("Found second div element (win1div$ICField$11$$1)")
+                    print("Found second div element (win2div$ICField$11$$1)")
                     time.sleep(random.uniform(1, 2))
                     second_div.click()
                     print("Clicked second div element")
@@ -234,11 +234,11 @@ def get_timetable(username=None, password=None, headless=False, output_filename=
                     time.sleep(random.uniform(2, 3))
                 else:
                     print("Second div element not visible")
-                    # page.screenshot(path=os.path.join(SCRIPT_DIR, "step2_div_not_found.png"))
+                    page.screenshot(path=os.path.join(SCRIPT_DIR, "step2_div_not_found.png"))
                     
             except Exception as step2_error:
                 print(f"Error in STEP 2: {step2_error}")
-                # page.screenshot(path=os.path.join(SCRIPT_DIR, "step2_error.png"))
+                page.screenshot(path=os.path.join(SCRIPT_DIR, "step2_error.png"))
             
             # TABLE EXTRACTION: Navigate to iframe and extract specific table
             print("TABLE EXTRACTION: Navigating to iframe content and looking for WEEKLY_SCHED_HTMLAREA table...")
@@ -262,8 +262,8 @@ def get_timetable(username=None, password=None, headless=False, output_filename=
                     time.sleep(3)
                     
                     # Take screenshot after navigation
-                    # page.screenshot(path=os.path.join(SCRIPT_DIR, "iframe_content.png"))
-                    # print("Screenshot of iframe content saved as iframe_content.png")
+                    page.screenshot(path=os.path.join(SCRIPT_DIR, "iframe_content.png"))
+                    print("Screenshot of iframe content saved as iframe_content.png")
                     
                 else:
                     print("Iframe not found, searching for table on current page...")
@@ -292,7 +292,6 @@ def get_timetable(username=None, password=None, headless=False, output_filename=
                     # Continue with next click even if this fails
                 
                 # start_date = datetime.date(2025, 8, 29)
-                start_date = datetime.datetime.now()
                 next_working_day_str = (start_date + datetime.timedelta(days=3 if start_date.weekday() == 4 else (2 if start_date.weekday() == 5 else (1 if start_date.weekday() == 6 else 1)))).strftime("%d/%m/%Y")
                 
                 try:

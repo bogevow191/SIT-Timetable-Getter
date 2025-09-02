@@ -24,7 +24,7 @@ if not all([USERNAME, PASSWORD, TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL_ID]):
     print("Error: Missing required environment variables. Please check your .env file.")
     exit(1)
 
-# start_date = datetime.date(2025, 8, 29)
+# start_date = datetime.date(2025, 9, 7)
 start_date = datetime.datetime.now()
 format_str = "%#d %b" if platform.system() == "Windows" else "%-d %b"
 next_working_day_str = (start_date + datetime.timedelta(days=3 if start_date.weekday() == 4 else (2 if start_date.weekday() == 5 else (1 if start_date.weekday() == 6 else 1)))).strftime(format_str)
@@ -34,7 +34,8 @@ df = get_timetable(
     username=USERNAME,
     password=PASSWORD,
     headless=True,  # Run in headless mode
-    output_filename="my_timetable"
+    output_filename="my_timetable",
+    start_date=start_date
 )
 # df = pd.read_csv("weekly_schedule_timetable.csv")
 
@@ -87,7 +88,7 @@ print(f"Final lessons count: {len(lessons)}")
 print(lessons)
 
 # Generate and send timetable image only if today is Sunday
-if datetime.datetime.now().weekday() == 6:  # Sunday is 6 in Python's weekday()
+if start_date.weekday() == 6:  # Sunday is 6 in Python's weekday()
     csv_path = os.path.join(SCRIPT_DIR, "weekly_schedule_timetable.csv")
     image_path = os.path.join(SCRIPT_DIR, "timetable_image.png")
 
