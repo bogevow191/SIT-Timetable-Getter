@@ -221,12 +221,15 @@ def get_timetable(username=None, password=None, headless=False, output_filename=
                 page.wait_for_load_state('networkidle', timeout=10000)
                 time.sleep(2)
                 
-                second_div_selector = '#win2div\\$ICField\\$11\\$\\$1'
+                # Use CSS selector that matches both win1div and win2div variations
+                second_div_selector = '[id*="div\\$ICField\\$11\\$\\$1"]'
                 page.wait_for_selector(second_div_selector, timeout=15000)
                 
                 second_div = page.locator(second_div_selector)
                 if second_div.is_visible():
-                    print("Found second div element (win2div$ICField$11$$1)")
+                    # Get the actual ID for logging
+                    actual_id = second_div.get_attribute('id')
+                    print(f"Found second div element ({actual_id})")
                     time.sleep(random.uniform(1, 2))
                     second_div.click()
                     print("Clicked second div element")
