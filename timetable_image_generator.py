@@ -44,10 +44,10 @@ def create_simple_timetable_image(csv_file_path, output_image_path="timetable_si
         font_cell = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)  # was 14
         font_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)  # was 12
     except:
-        font_header = ImageFont.load_default()
-        font_module = ImageFont.load_default()
-        font_cell = ImageFont.load_default()
-        font_small = ImageFont.load_default()
+        font_header = ImageFont.load_default(34)
+        font_module = ImageFont.load_default(26)
+        font_cell = ImageFont.load_default(26)
+        font_small = ImageFont.load_default(26)
     
     # Colors
     colors = {
